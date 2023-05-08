@@ -17,15 +17,15 @@ l_paddle = Paddle((-350, 0))
 ball = Ball()
 
 screen.listen()
-screen.onkey(r_paddle.up, "Up")
-screen.onkey(r_paddle.down, "Down")
-screen.onkey(l_paddle.up, "q")
-screen.onkey(l_paddle.down, "a")
+screen.onkeypress(r_paddle.up, "Up")
+screen.onkeypress(r_paddle.down, "Down")
+screen.onkeypress(l_paddle.up, "q")
+screen.onkeypress(l_paddle.down, "a")
 
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
     ball.ball_move()
 
     # Detect collision with top or bottom wall
